@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1522084851301
+Build-Jdk: 1.8.0_161
+Built-By: vaibhav
+Bundle-Description: com.ttn - student
+Bundle-ManifestVersion: 2
+Bundle-Name: student
+Bundle-SymbolicName: com.ttn.student
+Bundle-Version: 0.0.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.ttn.student.service;uses:="com.ttn.student";version=
+ "0.0.1",com.ttn.student;uses:="javax.script,org.apache.sling.scripting.
+ sightly.pojo,org.osgi.service.component";version="0.0.1"
+Import-Package: com.ttn.student,com.ttn.student.service,javax.script,org
+ .apache.sling.api.resource;version="[2.10,3)",org.apache.sling.api.scri
+ pting;version="[2.3,3)",org.apache.sling.scripting.sightly.pojo;version
+ ="[1.0,2)",org.osgi.framework;version="[1.5,2)",org.osgi.service.compon
+ ent;version="[1.1,2)",org.slf4j;version="[1.7,2)"
+Provide-Capability: osgi.service;objectClass:List<String>="com.ttn.stude
+ nt.service.StudentApplication",osgi.service;objectClass:List<String>="c
+ om.ttn.student.service.StudentService",osgi.service;objectClass:List<St
+ ring>="java.lang.Runnable"
+Require-Capability: osgi.extender;filter:="(&(osgi.extender=osgi.compone
+ nt)(version>=1.3.0)(!(version>=2.0.0)))",osgi.service;filter:="(objectC
+ lass=com.ttn.student.service.StudentService)";effective:=active,osgi.ee
+ ;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/com.ttn.student.SimpleDSComponent.xml,OSGI-I
+ NF/com.ttn.student.service.StudentApplicationImp.xml,OSGI-INF/com.ttn.s
+ tudent.service.StudentServiceImp.xml
+Tool: Bnd-3.2.0.201605172007
